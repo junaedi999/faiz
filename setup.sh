@@ -8,6 +8,26 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 		exit 1
 fi
 # ==========================================
+# check registered ip
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+echo "Connecting to Server..."
+sleep 0.4
+echo "Checking Permision..."
+sleep 0.3
+CEK=0123456
+if [ "$CEK" != "0123456" ]; then
+		echo -e "${red}Permission Denied!${NC}";
+        echo $CEK;
+        exit 0;
+else
+echo -e "${green}Permission Accepted...${NC}"
+sleep 0.6
+clear
+fi
+
+
 # Color
 RED='\033[0;31m'
 NC='\033[0m'
